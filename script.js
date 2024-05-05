@@ -10,3 +10,7 @@ for (let i = 0; i < 16; i++) {
     }
     container.appendChild(firstdiv);
 }
+
+const divgrid = document.querySelectorAll(".divgrid");
+
+divgrid.forEach((div) => div.addEventListener("mouseover", () => div.style.backgroundColor = "red"))
