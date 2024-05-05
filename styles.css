@@ -1,0 +1,12 @@
+html {
+    box-sizing: border-box;
+}
+
+#grid-container {
+    height: 960px;
+    width: 1500px;
+}
+
+#firstdiv {
+    display: flex;
+}
