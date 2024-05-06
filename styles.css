@@ -3,10 +3,23 @@ html {
 }
 
 #grid-container {
-    height: 960px;
-    width: 960px;
+    height: 700px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid grey;
 }
 
 #firstdiv {
     display: flex;
+}
+
+.divgrid {
+    border: 1px solid grey;
+}
+
+button {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
 }

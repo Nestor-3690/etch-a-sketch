@@ -1,5 +1,5 @@
 const container = document.querySelector("#grid-container");
-const size = 960;
+const size = 700;
 let squares = 16;
 
 // CREATE first grid (squares for 16*16) with size of 960px
