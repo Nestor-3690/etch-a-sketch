@@ -2,6 +2,7 @@ const container = document.querySelector("#grid-container");
 const size = 700;
 let squares = 16;
 
+// CREATE variables for each modification
 const normal = document.querySelector("#normal");
 const rgb = document.querySelector("#rgb");
 const opacity = document.querySelector("#opacity");
@@ -12,22 +13,20 @@ let isOpacity = false;
 // CREATE first grid (squares for 16*16) with size of 960px
 createGrid(size, squares);
 
+// CHANGE the actual modification when a button is clicked
 normal.addEventListener("click", () => {
     isNormal = true;
     isRGB = isOpacity = false;
-    createGrid(size, squares);
 })
 
 rgb.addEventListener("click", () => {
     isRGB = true;
     isNormal = isOpacity = false;
-    createGrid(size, squares);
 })
 
 opacity.addEventListener("click", () => {
     isOpacity = true;
     isNormal = isRGB = false;
-    createGrid(size, squares);
 })
 
 const button = document.querySelector("#gridsize");
@@ -70,14 +69,18 @@ function createGrid(size, squares) {
     // FOR each div, when mouseover, backgroundColor turn black
     divgrid.forEach((div) => div.addEventListener("mouseover", () => {
         if (isNormal === true) {
+            // IF normal variation activated, the backgroundColor turns black
             div.style.backgroundColor = "black"
         } else if (isRGB === true) {
+            // ELSE IF rgb mod if activated, the backgroundColor turns into a random color
             let colorOne = Math.round((Math.random()) * 255);
             let colorTwo = Math.round((Math.random()) * 255);
             let colorThree = Math.round((Math.random()) * 255);
             div.style.backgroundColor = `rgb(${colorOne}, ${colorTwo}, ${colorThree}`;
         } else {
+            // ELSE, the Opacity mod is activated, the backgroundColor Opacity is then updated
             let actualOpacity = Number(div.style.opacity) * 100;
+            // IF the actualOpacity is defined, upgrade it by 10%
             if (actualOpacity !== 0){
                 actualOpacity += 10;
                 if (actualOpacity > 100) {
@@ -85,11 +88,10 @@ function createGrid(size, squares) {
                 }
                 div.style.opacity = `${actualOpacity}%`;
             } else {
+                // ELSE set it to 10%
                 actualOpacity = "10%";
                 div.style.opacity = actualOpacity;
             }
         }
     }))
 }
-
-// div.setAttribute("style", `background-color: rgb(${colorOne}, ${colorTwo}, ${colorThree});`)
