@@ -18,8 +18,9 @@ html {
     border: 1px solid grey;
 }
 
-button {
-    display: block;
-    margin: auto;
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
     margin-bottom: 10px;
 }
